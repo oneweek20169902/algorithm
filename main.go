@@ -3,7 +3,7 @@ package main
 import (
 	"algorithm/action"
 	"fmt"
-	"github.com/emacsist/go-common/helper/number"
+	"math/rand"
 	"time"
 )
 
@@ -34,9 +34,10 @@ func isUnique(astr string) bool {
 }
 
 func main() {
+	action.LongestPalindrome("babad")
 	isUnique("leetcode")
 	createLink([]int{1, 2, 3, 4, 5})
-	data := number.GenerateInt(100000, 100000)
+	data := GenerateInt(100000, 100000)
 	start := makeTimestamp()
 	// fmt.Printf("%v\n", data)
 	data = action.MergeSort(data)
@@ -86,4 +87,13 @@ func selectSort(array []int) []int {
 		println(array)
 	}
 	return array
+}
+
+// GenerateInt : 随机生成 n 个 最大为 max 的 Int 切片
+func GenerateInt(n, max int) (data []int) {
+	rand.Seed(time.Now().UnixNano())
+	for i := 0; i < n; i++ {
+		data = append(data, rand.Intn(max))
+	}
+	return
 }
