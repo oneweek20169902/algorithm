@@ -34,6 +34,7 @@ func isUnique(astr string) bool {
 }
 
 func main() {
+	binarySearch(2)
 	action.MergeArray([]int{1, 2, 3, 0, 0, 0}, 3, []int{2, 5, 6}, 3)
 	action.MergeArray([]int{1, 0}, 1, []int{1}, 1)
 	action.Fib(2)
@@ -50,7 +51,7 @@ func main() {
 	//action.QuickSort(li, 0, len(li)-1)
 	//insertSort(array)
 	//selectSort(array)
-	//binarySearch(2)
+
 }
 
 func makeTimestamp() int64 {

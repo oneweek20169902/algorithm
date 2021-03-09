@@ -13,11 +13,11 @@ func partition(array []int, left int, right int) int {
 	temp := array[left]
 	for left < right {
 		for left < right && array[right] >= temp {
-			right -= 1
+			right--
 		}
 		array[left] = array[right]
 		for left < right && array[left] <= temp {
-			left += 1
+			left++
 		}
 		array[right] = array[left]
 		array[left] = temp
