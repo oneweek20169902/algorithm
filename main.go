@@ -34,6 +34,10 @@ func isUnique(astr string) bool {
 }
 
 func main() {
+
+	li := []int{5, 7, 4, 6, 3, 1, 2, 9, 8, -1}
+	action.QuickSort(li, 0, len(li)-1)
+
 	action.MergeArray([]int{1, 2, 3, 0, 0, 0}, 3, []int{2, 5, 6}, 3)
 	action.MergeArray([]int{1, 0}, 1, []int{1}, 1)
 	action.Fib(2)
@@ -46,8 +50,6 @@ func main() {
 	data = action.MergeSort(data)
 	fmt.Printf("cost %v ms \n", makeTimestamp()-start)
 
-	//li := []int{5, 7, 4, 6, 3, 1, 2, 9, 8, -1}
-	//action.QuickSort(li, 0, len(li)-1)
 	//insertSort(array)
 	//selectSort(array)
 	//binarySearch(2)
