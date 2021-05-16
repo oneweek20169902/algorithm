@@ -1,6 +1,9 @@
 package action
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 //斐波那契数
 func Fib(n int) int {
@@ -41,4 +44,37 @@ func MergeArray(A []int, m int, B []int, n int) {
 	}
 	A = append(A[:0], resutl...)
 	fmt.Println(A)
+}
+
+func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+	resutl := make([]int, 0)
+	var i, j int = 0, 0
+	m := len(nums1)
+	n := len(nums2)
+	length := m + n - 1
+	for i < m && j < n {
+		if len(resutl) == length {
+			break
+		}
+		if nums1[i] < nums2[j] {
+			resutl = append(resutl, nums1[i])
+			i++
+		} else {
+			resutl = append(resutl, nums2[j])
+			j++
+		}
+	}
+	if j < n {
+		resutl = append(resutl, nums2[j:]...)
+	} else if i < m {
+		resutl = append(resutl, nums1[i:m]...)
+	}
+	num := len(resutl) / 2
+	if len(resutl)%2 == 0 {
+		num0, _ := strconv.ParseFloat(fmt.Sprintf("%.2f", (float64(resutl[num])+float64(resutl[num-1]))/2), 64)
+		return num0
+	} else {
+		return float64((resutl[num]))
+	}
+	return 0
 }

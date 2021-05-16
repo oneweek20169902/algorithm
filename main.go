@@ -34,6 +34,9 @@ func isUnique(astr string) bool {
 }
 
 func main() {
+	res := action.FindMedianSortedArrays([]int{1}, []int{1, 2, 3, 9})
+	fmt.Println(res)
+	binarySearch(2)
 
 	li := []int{5, 7, 4, 6, 3, 1, 2, 9, 8, -1}
 	action.QuickSort(li, 0, len(li)-1)
@@ -52,7 +55,7 @@ func main() {
 
 	//insertSort(array)
 	//selectSort(array)
-	//binarySearch(2)
+
 }
 
 func makeTimestamp() int64 {
